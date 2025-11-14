@@ -1,0 +1,30 @@
+---
+
+## src/config.h
+```cpp
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// ===== CONFIGURAÇÃO WIFI =====
+const char* WIFI_SSID     = "SEU_SSID_AQUI";
+const char* WIFI_PASSWORD = "SUA_SENHA_AQUI";
+
+// ===== PINAGEM =====
+// Ajuste conforme seu hardware
+#define PIN_LIGHT   2   // LED que simula a lâmpada
+#define PIN_FAN     16  // saída para relé do ventilador ou LED
+#define PIN_DHT     4   // sinal do sensor DHT11/DHT22
+#define PIN_PIR     17  // sensor pir
+#define PIN_BUZZER  5   // buzzer ativo para alarme
+
+// ===== SENSOR =====
+#define DHTTYPE DHT22   // DHT11 ou DHT22 (mude para DHT11 se usar esse)
+                         // lembre-se de instalar a biblioteca DHT
+
+// ===== LIMITE DE TEMPERATURA =====
+#define TEMP_THRESHOLD 28.0  // °C -> se ultrapassar, ventilador liga (modo auto)
+
+// ===== OUTRAS =====
+#define STATUS_UPDATE_INTERVAL 2000  // ms - intervalo para atualizar sensores no loop
+
+#endif // CONFIG_H
